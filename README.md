@@ -1,5 +1,5 @@
 # gchat
-Simple GRPC chat room.
+Simple GRPC chat room implemented to learn about GRPC.
 
 ## Installing
 Firstly, install the client and server programs by running: ```go get -u github.com/sno6/gchat/...```
