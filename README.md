@@ -1,5 +1,5 @@
 # gchat
-Simple GRPC chat room implemented to learn about GRPC.
+Simple GRPC chat room implemented to learn about GRPC and using Protocol Buffers in Go.
 
 ## Installing
 Firstly, install the client and server programs by running: ```go get -u github.com/sno6/gchat/...```
