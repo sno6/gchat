@@ -2,7 +2,10 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
+	"math/rand"
+	"time"
 
 	"github.com/sno6/gchat/chat"
 	"github.com/sno6/gchat/ui"
@@ -10,7 +13,7 @@ import (
 
 func main() {
 	addr := flag.String("h", "127.0.0.1:8080", "Host and port address the server will run from. (defaults to localhost:8080).")
-	name := flag.String("u", "", "Client user name.")
+	name := flag.String("u", defaultName(), "Client user name.")
 	flag.Parse()
 
 	cli, err := chat.NewClient(*addr, *name)
@@ -34,4 +37,9 @@ func main() {
 	if err := cui.Run(); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func defaultName() string {
+	rand.Seed(time.Now().UnixNano())
+	return fmt.Sprintf("User%d", rand.Intn(9999))
 }

@@ -35,7 +35,7 @@ func NewCUI(s SendCloser) (*CUI, error) {
 // This satisfies the Notifier interface of the chat client so it can subscribe
 // to events that happen and update the UI when input is received from the server.
 func (c *CUI) Notify(msg *chat.Message) {
-	c.gui.Execute(func(g *gocui.Gui) error {
+	c.gui.Update(func(g *gocui.Gui) error {
 		v, err := g.View("chat")
 		if err != nil {
 			return err
